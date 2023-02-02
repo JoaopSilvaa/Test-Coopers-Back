@@ -3,10 +3,12 @@ const authentication = require('../middlewares/authorization');
 
 const createTaskController = require('../controllers/createTaskController');
 const readAllTasksController = require('../controllers/readAllTasksController');
+const deleteAllTasksController = require('../controllers/deleteAllTasksContoller');
 
 const router = Router();
 
 router.post('/', authentication, createTaskController);
 router.get('/', authentication, readAllTasksController);
+router.delete('/', authentication, deleteAllTasksController);
 
 module.exports = router;
