@@ -1,7 +1,7 @@
 const { User, Task } = require('../database/models');
 
 module.exports = async (username, content) => {
-  const { id } = await User.findOne({ username });
+  const { id } = await User.findOne({ where: { username } });
 
   if (!content) {
     return {
