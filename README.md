@@ -87,8 +87,8 @@ O corpo da requisição deve seguir o formato abaixo:
     }
     ```
 
-## DELETE tasks `task/`
-- O endpoint não devolve nada em seu corpo, mas retorna status 204 e apaga todas as tasks relacionadas ao usuário logado 
+## DELETE tasks `task/all/situation`
+- O endpoint não devolve nada em seu corpo, mas retorna status 204 e apaga todas as tasks relacionadas ao usuário logado com a situation apontada na url (0 ou 1)
 
 ## DELETE tasks `task/id`
 - O endpoint não devolve nada em seu corpo, mas retorna status 204 e apaga a task com id passada por parâmetro da url, necessitando passar o token do login para autorizar a operação

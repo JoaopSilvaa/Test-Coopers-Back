@@ -11,7 +11,7 @@ const router = Router();
 
 router.post('/', authentication, createTaskController);
 router.get('/', authentication, readAllTasksController);
-router.delete('/', authentication, deleteAllTasksController);
+router.delete('/all/:situation', authentication, deleteAllTasksController);
 router.delete('/:id', authentication, deleteTaskByIdController);
 router.put('/:id', authentication, updateTaskController);
 
