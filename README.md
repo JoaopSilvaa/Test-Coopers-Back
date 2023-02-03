@@ -6,7 +6,7 @@
 
 ## Técnologias usadas
 Back-end:
-> Desenvolvido usando: Node.js, MySQL, Sequelize, Rest API, CRUD.
+> Desenvolvido usando: Node.js, MySQL, Sequelize, Rest API, CRUD, JWT, MD5.
 
 ## Acesso ao servidor remoto
 
