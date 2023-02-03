@@ -10,7 +10,8 @@ Back-end:
 
 ## Acesso ao servidor remoto
 
-Você pode utilizar essa aplicação através do link: https://test-coopers-back-production.up.railway.app/, em que está rodando através do serviço Railway. O banco de dados também está no serviço da Railway, podendo ser acessado diretamente pela API e suas rotas
+Você pode utilizar essa aplicação através do link: https://test-coopers-back-production.up.railway.app/, em que está rodando através do serviço Railway. O banco de dados também está no serviço da Railway, podendo ser acessado diretamente pela API e suas rotas.
+Você também pode acessar o Frontend dessa aplicação através do link: https://main.d2j0fk6itrrsih.amplifyapp.com/, acessar o repositório do mesmo através do link: https://github.com/JoaopSilvaa/Test-Coopers-Front.
 
 ## Executando a aplicação localmente
 
@@ -47,107 +48,74 @@ Você pode utilizar essa aplicação através do link: https://test-coopers-back
 - O corpo da requisição deve seguir o formato abaixo:
     ```json
     {
-        "content": "ave"
+        "content": "fazer um café"
     }
     ```
 * obs.: É necessário passar o token gerado no login no headers.authorization para criar uma task e ser vinculada ao usuário logado
 
-<!-- ## GET tasks `task/`
+## GET tasks `task/`
 - O endpoint terá a resposta da requisição conforme formato abaixo:
     ```json
-    {
-        "id": 3,
-        "orderNfId": "1605181324130",
-        "orderNumber": "18184",
-        "orderPath": null,
-        "orderFileName": null,
-        "orderOriginalName": null,
-        "emissionDate": "2020-11-10",
-        "pdfFile": null,
-        "emitedTo": "00418477002640",
-        "nNf": "18184",
-        "CTE": "",
-        "value": "222795",
-        "cnpjId": 1,
-        "userId": 1,
-        "buyerId": 1,
-        "providerId": 1,
-        "orderStatusBuyer": "7",
-        "orderStatusProvider": "3",
-        "deliveryReceipt": null,
-        "cargoPackingList": null,
-        "deliveryCtrc": null,
-        "createdAt": "2020-11-12T11:42:06.000Z",
-        "updatedAt": "2020-11-18T12:22:14.000Z",
-        "buyer": {
-            "id": 1,
-            "name": "SACADO 001",
-            "tradingName": "SACADO 001 LTDA",
-            "cashforceTax": "0",
-            "responsibleName": null,
-            "responsibleEmail": null,
-            "responsiblePosition": null,
-            "responsiblePhone": null,
-            "responsibleMobile": null,
-            "website": null,
-            "postalCode": null,
-            "address": null,
-            "number": null,
-            "complement": null,
-            "neighborhood": null,
-            "city": null,
-            "state": null,
-            "phoneNumber": null,
-            "situation": null,
-            "situationDate": null,
-            "cnpjId": 1,
-            "confirm": 1,
-            "email": null,
-            "updatedAt": "2020-10-29T21:20:34.000Z"
+    [
+        {
+            "id": 16,
+            "content": "tomar banho de mar",
+            "userId": 2,
+            "situation": 1,
+            "createdAt": "2023-02-02T19:48:40.000Z",
+            "updatedAt": "2023-02-02T19:50:47.000Z"
         },
-        "provider": {
-            "id": 1,
-            "name": "CEDENTE 002",
-            "tradingName": "CEDENTE 002 LTDA",
-            "cashforceTax": null,
-            "responsibleName": null,
-            "responsibleEmail": null,
-            "responsiblePosition": null,
-            "responsiblePhone": null,
-            "responsibleMobile": null,
-            "website": null,
-            "postalCode": null,
-            "address": null,
-            "number": null,
-            "complement": null,
-            "neighborhood": null,
-            "city": null,
-            "state": null,
-            "bank": null,
-            "bankAgency": null,
-            "account": null,
-            "documents": null,
-            "phoneNumber": null,
-            "situation": null,
-            "situationDate": null,
-            "cnpjId": 2,
-            "email": null,
-            "updatedAt": "2020-10-29T21:22:22.000Z"
+        {
+            "id": 17,
+            "content": "comer chocolate",
+            "userId": 2,
+            "situation": 1,
+            "createdAt": "2023-02-02T19:52:11.000Z",
+            "updatedAt": "2023-02-02T19:52:21.000Z"
+        },
+        {
+            "id": 18,
+            "content": "a",
+            "userId": 2,
+            "situation": 1,
+            "createdAt": "2023-02-02T19:52:44.000Z",
+            "updatedAt": "2023-02-02T19:59:36.000Z"
+        },
+        {
+            "id": 19,
+            "content": "c",
+            "userId": 2,
+            "situation": 1,
+            "createdAt": "2023-02-02T20:02:27.000Z",
+            "updatedAt": "2023-02-02T20:04:25.000Z"
+        },
+        {
+            "id": 20,
+            "content": "b",
+            "userId": 2,
+            "situation": 1,
+            "createdAt": "2023-02-02T20:05:16.000Z",
+            "updatedAt": "2023-02-02T20:06:15.000Z"
         }
+    ]
+    ```
+* obs.: É necessário passar o token gerado no login no headers.authorization para criar uma task e ser vinculada ao usuário logado
+
+## PUT tasks `task/id`
+- Nessa rota você pode passar no corpo da requisição o que quer alterar no conteúdo da task, mas se não passar ele mudará a chave situation da task.
+O corpo da requisição deve seguir o formato abaixo:
+
+    ```json
+    {
+        "content": "alterando conteúdo",
     }
     ```
 
-## PUT tasks `task/id`
-- O corpo da requisição deve seguir o formato abaixo:
-    ```json
-    {
-        "orderStatusBuyer": "1",
-        "orderStatusProvider": "5"
-    }
-    ``` -->
-
 ## DELETE tasks `task/`
 - O endpoint não devolve nada em seu corpo, mas retorna status 204 e apaga todas as tasks relacionadas ao usuário logado 
+
+## DELETE tasks `task/id`
+- O endpoint não devolve nada em seu corpo, mas retorna status 204 e apaga a task com id passada por parâmetro da url, necessitando passar o token do login para autorizar a operação
 
   
 <br /><br />
