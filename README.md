@@ -35,6 +35,13 @@ Você também pode acessar o Frontend dessa aplicação através do link: https:
 
 ## POST login `user/login`
 * Endpoint responsável por gerar um token para acesso das informações das tasks
+  - Para conseguir logar e utilizar as demais rotas, você pode acessar com os usuários citados abaixo:
+    * Login 1:
+      - username: Joao
+      - password: senhasuperforte
+    * Login 2:
+      - user: Antonio
+      - password: senhaSenha
 - O corpo da requisição deve seguir o formato abaixo:
     ```json
     {
@@ -65,38 +72,7 @@ Você também pode acessar o Frontend dessa aplicação através do link: https:
             "createdAt": "2023-02-02T19:48:40.000Z",
             "updatedAt": "2023-02-02T19:50:47.000Z"
         },
-        {
-            "id": 17,
-            "content": "comer chocolate",
-            "userId": 2,
-            "situation": 1,
-            "createdAt": "2023-02-02T19:52:11.000Z",
-            "updatedAt": "2023-02-02T19:52:21.000Z"
-        },
-        {
-            "id": 18,
-            "content": "a",
-            "userId": 2,
-            "situation": 1,
-            "createdAt": "2023-02-02T19:52:44.000Z",
-            "updatedAt": "2023-02-02T19:59:36.000Z"
-        },
-        {
-            "id": 19,
-            "content": "c",
-            "userId": 2,
-            "situation": 1,
-            "createdAt": "2023-02-02T20:02:27.000Z",
-            "updatedAt": "2023-02-02T20:04:25.000Z"
-        },
-        {
-            "id": 20,
-            "content": "b",
-            "userId": 2,
-            "situation": 1,
-            "createdAt": "2023-02-02T20:05:16.000Z",
-            "updatedAt": "2023-02-02T20:06:15.000Z"
-        }
+        /*...*/
     ]
     ```
 * obs.: É necessário passar o token gerado no login no headers.authorization para criar uma task e ser vinculada ao usuário logado
